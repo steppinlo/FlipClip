@@ -10,7 +10,6 @@
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		02BAF4FD1CBFF2D000AE35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF4FC1CBFF2D000AE35F1 /* AppDelegate.swift */; };
 		02E1702E1C62EEAA00A6188F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E1702D1C62EEAA00A6188F /* main.m */; };
-		02E170311C62EEAA00A6188F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E170301C62EEAA00A6188F /* AppDelegate.m */; };
 		02E170341C62EEAA00A6188F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E170331C62EEAA00A6188F /* FirstViewController.m */; };
 		02E1703A1C62EEAA00A6188F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E170381C62EEAA00A6188F /* Main.storyboard */; };
 		02E1703C1C62EEAA00A6188F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E1703B1C62EEAA00A6188F /* Assets.xcassets */; };
@@ -55,8 +54,6 @@
 		02BAF4FC1CBFF2D000AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02E170291C62EEAA00A6188F /* FlipClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E1702D1C62EEAA00A6188F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		02E1702F1C62EEAA00A6188F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		02E170301C62EEAA00A6188F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		02E170321C62EEAA00A6188F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		02E170331C62EEAA00A6188F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		02E170391C62EEAA00A6188F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,8 +146,6 @@
 		02E1702B1C62EEAA00A6188F /* FlipClip */ = {
 			isa = PBXGroup;
 			children = (
-				02E1702F1C62EEAA00A6188F /* AppDelegate.h */,
-				02E170301C62EEAA00A6188F /* AppDelegate.m */,
 				02BAF4FC1CBFF2D000AE35F1 /* AppDelegate.swift */,
 				02E170321C62EEAA00A6188F /* FirstViewController.h */,
 				02E170331C62EEAA00A6188F /* FirstViewController.m */,
@@ -386,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E170311C62EEAA00A6188F /* AppDelegate.m in Sources */,
 				02E170341C62EEAA00A6188F /* FirstViewController.m in Sources */,
 				02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */,
 				02BAF4FD1CBFF2D000AE35F1 /* AppDelegate.swift in Sources */,
@@ -539,7 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = slope.FlipClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "FlipClip/FlipClip-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "\"$(SRCROOT)/$(PROJECT_NAME)/ObjCBridgingHeader.h\"";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -558,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = slope.FlipClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "FlipClip/FlipClip-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "\"$(SRCROOT)/$(PROJECT_NAME)/ObjCBridgingHeader.h\"";
 			};
 			name = Release;
 		};
