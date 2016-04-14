@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */; };
+		02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */; };
 		02E1703A1C62EEAA00A6188F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E170381C62EEAA00A6188F /* Main.storyboard */; };
 		02E1703C1C62EEAA00A6188F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E1703B1C62EEAA00A6188F /* Assets.xcassets */; };
 		02E1703F1C62EEAA00A6188F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E1703D1C62EEAA00A6188F /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
 		02E170291C62EEAA00A6188F /* FlipClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E170391C62EEAA00A6188F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02E1703B1C62EEAA00A6188F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				02563B2C1C7BCFD5000DE196 /* CameraController.swift */,
+				02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */,
 				02E170381C62EEAA00A6188F /* Main.storyboard */,
 				02E1703B1C62EEAA00A6188F /* Assets.xcassets */,
 				02E1703D1C62EEAA00A6188F /* LaunchScreen.storyboard */,
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */,
+				02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */,
 				02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
