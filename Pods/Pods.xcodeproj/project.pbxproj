@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21E15495C5515540CCED4C8AC8061D79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */; };
+		A967EF996E0CEA93E82CC89C2A1DBF50 /* Pods-FlipClip-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.debug.xcconfig"; sourceTree = "<group>"; };
+		1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlipClip-dummy.m"; sourceTree = "<group>"; };
+		205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		26EB2B30CDE77261F16DAD0B0EA329EF /* libKinveyKit.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libKinveyKit.a; path = "KinveyKit-1.40.4/libKinveyKit.a"; sourceTree = "<group>"; };
+		45DDB5997E17B9AD5CCAC18C589A6FBF /* Pods-FlipClip-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlipClip-acknowledgements.plist"; sourceTree = "<group>"; };
+		71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		854A5F913F3D4442020AF9233EFDF0AE /* Pods-FlipClip-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlipClip-acknowledgements.markdown"; sourceTree = "<group>"; };
+		915266AEAB28A21BEF5BEDB40A40DDEB /* Pods-FlipClip-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlipClip-resources.sh"; sourceTree = "<group>"; };
+		B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.release.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73326C20BF52560A16CA251BABD3E3FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21E15495C5515540CCED4C8AC8061D79 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4662DE627FCF5930D4EA2666EEAE2B8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26EB2B30CDE77261F16DAD0B0EA329EF /* libKinveyKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				87D6D6AABB4730C2F710E08B9A95324D /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				855C066B2174B86EA62C2F8BC5632D1F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		855C066B2174B86EA62C2F8BC5632D1F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F57197BBE626681A0E236109C8204F20 /* Pods-FlipClip */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		87D6D6AABB4730C2F710E08B9A95324D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A553BA994D1968BECD9ECD6EA4AE613F /* KinveyKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A553BA994D1968BECD9ECD6EA4AE613F /* KinveyKit */ = {
+			isa = PBXGroup;
+			children = (
+				4662DE627FCF5930D4EA2666EEAE2B8D /* Frameworks */,
+			);
+			path = KinveyKit;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F57197BBE626681A0E236109C8204F20 /* Pods-FlipClip */ = {
+			isa = PBXGroup;
+			children = (
+				854A5F913F3D4442020AF9233EFDF0AE /* Pods-FlipClip-acknowledgements.markdown */,
+				45DDB5997E17B9AD5CCAC18C589A6FBF /* Pods-FlipClip-acknowledgements.plist */,
+				1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */,
+				915266AEAB28A21BEF5BEDB40A40DDEB /* Pods-FlipClip-resources.sh */,
+				141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */,
+				B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */,
+			);
+			name = "Pods-FlipClip";
+			path = "Target Support Files/Pods-FlipClip";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EE1C4E5FB9032FC71DE422DA8723A69 /* Pods-FlipClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 145F0D632F373677619EF70924A3B800 /* Build configuration list for PBXNativeTarget "Pods-FlipClip" */;
+			buildPhases = (
+				D5FEF65957B33E74C0CD338AFB6F17DE /* Sources */,
+				73326C20BF52560A16CA251BABD3E3FD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlipClip";
+			productName = "Pods-FlipClip";
+			productReference = 71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EE1C4E5FB9032FC71DE422DA8723A69 /* Pods-FlipClip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5FEF65957B33E74C0CD338AFB6F17DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A967EF996E0CEA93E82CC89C2A1DBF50 /* Pods-FlipClip-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		159C5ADC1C0042338BC8B6598C7AF26A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1D31C6FA92E4882807E8E00A4AA7B30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		145F0D632F373677619EF70924A3B800 /* Build configuration list for PBXNativeTarget "Pods-FlipClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D31C6FA92E4882807E8E00A4AA7B30D /* Debug */,
+				159C5ADC1C0042338BC8B6598C7AF26A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
