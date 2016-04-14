@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
+		026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B13221CC0406B00BE01FF /* TabsViewController.swift */; };
 		02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */; };
 		02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */; };
 		02E1703A1C62EEAA00A6188F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E170381C62EEAA00A6188F /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
 		02E170291C62EEAA00A6188F /* FlipClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				02E170401C62EEAA00A6188F /* Info.plist */,
 				02E1702C1C62EEAA00A6188F /* Supporting Files */,
 				02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */,
+				026B13221CC0406B00BE01FF /* TabsViewController.swift */,
 			);
 			path = FlipClip;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */,
 				02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */,
 				02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */,
 				02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */,

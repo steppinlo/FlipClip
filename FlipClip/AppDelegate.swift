@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.navigationBarAppearance()
         return true
     }
     
@@ -39,6 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func navigationBarAppearance() {
+        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
+        UITabBar.appearance().barTintColor = UIColor.blueColor()
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Ubuntu", size: 10.0)!], forState: .Normal)
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 12.0)!], forState: .Normal)
     }
     
     

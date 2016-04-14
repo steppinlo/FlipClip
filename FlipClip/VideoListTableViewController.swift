@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+class VideoListTableViewController: UITableViewController {
+    override func viewDidLoad() {
+    }
+}

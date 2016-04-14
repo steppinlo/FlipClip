@@ -33,8 +33,10 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
             imagePicker.allowsEditing = false
             imagePicker.showsCameraControls = true
             
+//            self.navigationController?.pushViewController(imagePicker, animated: false)
+            
             self.presentViewController(imagePicker, animated: true, completion: nil)
-            navigationController?.popToRootViewControllerAnimated(true)
+//            navigationController?.popToRootViewControllerAnimated(true)
         }
             
         else {
