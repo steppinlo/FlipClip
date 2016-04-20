@@ -11,7 +11,7 @@ import MediaPlayer
 import MobileCoreServices
 import AVFoundation
 
-class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+class CameraController: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 //    
 //    var collection: PFObject?
 //    let captureSession = AVCaptureSession()
@@ -32,11 +32,8 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
             imagePicker.mediaTypes = [kUTTypeMovie as String]
             imagePicker.allowsEditing = false
             imagePicker.showsCameraControls = true
-            
-//            self.navigationController?.pushViewController(imagePicker, animated: false)
-            
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-//            navigationController?.popToRootViewControllerAnimated(true)
+
+            self.tabBarController?.presentViewController(imagePicker, animated: true, completion: nil)
         }
             
         else {
@@ -47,12 +44,16 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        print("hellooo!")
-        dismissViewControllerAnimated(true) { () -> Void in
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        }
+
+        self.tabBarController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            print(self.tabBarController?.selectedViewController)
+        })
+        self.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
+//        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+//        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+//        dismissViewControllerAnimated(true) { () -> Void in
+//            self.navigationController?.popToRootViewControllerAnimated(true)
+//        }
 //        if (tabBarController == nil){
 //            print("uhoh! yay!")
 //            self.performSegueWithIdentifier("goHome", sender: self)
@@ -63,12 +64,7 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     override func viewWillAppear(animated: Bool) {
-        showCamera()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
+//        showCamera()
     }
     
     

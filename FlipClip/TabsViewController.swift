@@ -8,45 +8,49 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
+import MobileCoreServices
+import AVFoundation
 
 class TabsViewController: UITabBarController, UITabBarControllerDelegate {
-    var camera: UIViewController!
+    var camera = CameraController()
     var videoList: UIViewController!
     var previouslySelectedIndex: NSInteger!
-    var completionHandler:((viewController: TabsViewController) -> Void)? = nil
+//    var cameraDelegate: CameraControllerDelegate?
     
     override func viewDidLoad() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.camera = storyboard.instantiateViewControllerWithIdentifier("Camera")
         self.videoList = storyboard.instantiateViewControllerWithIdentifier("VideoList")
-        
-        let cameraNav = UINavigationController.init(rootViewController: self.camera)
         let videoListNav = UINavigationController.init(rootViewController: self.videoList)
         
         self.delegate = self
         
-        self.setViewControllers([videoListNav, cameraNav], animated: false)
+        self.setViewControllers([videoListNav, self.camera], animated: false)
+        self.updateTabBarItems()
         
     }
     
     func updateTabBarItems() {
-        self.camera.tabBarItem = UITabBarItem.init(title: "Camera", image: nil, selectedImage: nil)
-        self.videoList.tabBarItem = UITabBarItem.init(title: "VideoList", image: nil, selectedImage: nil)
+        self.camera.tabBarItem = UITabBarItem.init(title: "Camera", image: UIImage(named: "first"), selectedImage: nil)
+        self.videoList.tabBarItem = UITabBarItem.init(title: "VideoList", image: UIImage(named: "second"), selectedImage: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let completionHandler = self.completionHandler {
-            completionHandler(viewController: self)
-            self.completionHandler = nil
-        }
+
     }
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        print(viewController.dynamicType)
-        if viewController.title == "CameraController" {
-            self.performSegueWithIdentifier("showModalView", sender: nil)
+        if viewController.classForCoder == CameraController.self {
+//            self.cameraDelegate?.showCamera()
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Camera") as! UIImagePickerController
+            vc.sourceType = .Camera
+            vc.showsCameraControls = true
+            vc.mediaTypes = [kUTTypeMovie as String]
+            
+            presentViewController(vc, animated: true, completion: nil)
+//            self.performSegueWithIdentifier("showModalView", sender: nil)
             return false
         }
         return true

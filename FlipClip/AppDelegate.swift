@@ -44,9 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func navigationBarAppearance() {
         UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
-        UITabBar.appearance().barTintColor = UIColor.blueColor()
 //        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Ubuntu", size: 10.0)!], forState: .Normal)
-//        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 12.0)!], forState: .Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 12.0)!], forState: .Normal)
     }
     
     
