@@ -13,16 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+    func setupApplication() {
         KCSClient.sharedClient().initializeKinveyServiceForAppKey(
             "kid_-kjVlDfzbZ",
             withAppSecret: "1907fc1b881a4a70921dd18ef30542d0",
             usingOptions: nil
         )
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
+        let nav = UINavigationController.init(rootViewController: signIn)
         
+        self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
+        self.window?.makeKeyAndVisible()
+        
+        print(self.window?.rootViewController)
         if let _ = KCSUser.activeUser() {
             print("there is a user")
         } else {
@@ -30,6 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.navigationBarAppearance()
+    }
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        self.setupApplication()
+        return true
+    }
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        self.setupApplication()
         return true
     }
     

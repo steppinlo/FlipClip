@@ -3,8 +3,69 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Create Account Table View Controller-->
+        <scene sceneID="IfF-EA-cZH">
+            <objects>
+                <viewController storyboardIdentifier="SignUp" id="nNH-Mp-7Hx" customClass="FCCreateAccountTableViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fwe-pE-kDb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qj2-Uh-38Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BP5-J0-lew">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YpL-iV-n4M">
+                                <rect key="frame" x="37" y="108" width="526" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0rn-FY-GE4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngp-1d-18e">
+                                <rect key="frame" x="37" y="162" width="526" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ekU-ER-7g8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npp-uv-90t">
+                                <rect key="frame" x="37" y="216" width="526" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ESp-sq-p75"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ngp-1d-18e" firstAttribute="top" secondItem="YpL-iV-n4M" secondAttribute="bottom" constant="19" id="Cee-QC-pni"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YpL-iV-n4M" secondAttribute="trailing" constant="17" id="LL4-5h-0PL"/>
+                            <constraint firstItem="YpL-iV-n4M" firstAttribute="top" secondItem="fwe-pE-kDb" secondAttribute="bottom" constant="88" id="QON-kO-vEU"/>
+                            <constraint firstItem="npp-uv-90t" firstAttribute="top" secondItem="Ngp-1d-18e" secondAttribute="bottom" constant="19" id="Y8a-0c-HVm"/>
+                            <constraint firstItem="npp-uv-90t" firstAttribute="leading" secondItem="Ngp-1d-18e" secondAttribute="leading" id="cnA-rV-5yl"/>
+                            <constraint firstItem="npp-uv-90t" firstAttribute="trailing" secondItem="Ngp-1d-18e" secondAttribute="trailing" id="lpU-DE-hXC"/>
+                            <constraint firstItem="Ngp-1d-18e" firstAttribute="trailing" secondItem="YpL-iV-n4M" secondAttribute="trailing" id="tw9-k9-1ul"/>
+                            <constraint firstItem="Ngp-1d-18e" firstAttribute="leading" secondItem="YpL-iV-n4M" secondAttribute="leading" id="xZ7-Sl-Wdz"/>
+                            <constraint firstItem="YpL-iV-n4M" firstAttribute="leading" secondItem="BP5-J0-lew" secondAttribute="leadingMargin" constant="17" id="y2u-5m-Ihh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="Ngp-1d-18e" id="G5D-yd-nQ0"/>
+                        <outlet property="nameField" destination="YpL-iV-n4M" id="GUV-2u-fQx"/>
+                        <outlet property="passwordField" destination="npp-uv-90t" id="3PM-K9-lCF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGF-B4-3Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="-1035"/>
+        </scene>
         <!--Item-->
         <scene sceneID="BPq-V7-GKt">
             <objects>
@@ -43,6 +104,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="8TQ-DE-hwX">
+            <objects>
+                <viewController storyboardIdentifier="SignIn" id="a3k-Rn-vg2" customClass="FCSignInViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kUe-Qi-oIY"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Gy-nK-Y22"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iaf-BZ-Xao">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bni-sQ-3Qy">
+                                <rect key="frame" x="86" y="51" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="a3k-Rn-vg2" eventType="touchUpInside" id="BTk-Lf-WNq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.52305214412105672" blue="0.087938728407665034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bni-sQ-3Qy" firstAttribute="leading" secondItem="Iaf-BZ-Xao" secondAttribute="leadingMargin" constant="66" id="Puj-NH-ST2"/>
+                            <constraint firstItem="bni-sQ-3Qy" firstAttribute="top" secondItem="kUe-Qi-oIY" secondAttribute="bottom" constant="31" id="agk-Wc-E7M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="bni-sQ-3Qy" id="Qek-EE-C3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTw-bM-iyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="-1035"/>
         </scene>
         <!--Tabs View Controller-->
         <scene sceneID="yl2-sM-qoP">

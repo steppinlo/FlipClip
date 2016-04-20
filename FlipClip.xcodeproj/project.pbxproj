@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */; };
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B13221CC0406B00BE01FF /* TabsViewController.swift */; };
+		028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */; };
 		02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */; };
 		02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */; };
 		02E1703A1C62EEAA00A6188F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E170381C62EEAA00A6188F /* Main.storyboard */; };
@@ -49,10 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlipClip-Bridging-Header.h"; sourceTree = "<group>"; };
 		028B85861CC7FFCC00A3F9F1 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCSignInViewController.swift; sourceTree = "<group>"; };
 		02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
 		02E170291C62EEAA00A6188F /* FlipClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028B85881CC801AC00A3F9F1 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */,
+				024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */,
+			);
+			name = "Sign In";
+			sourceTree = "<group>";
+		};
 		02E170201C62EEA900A6188F = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 		02E1702B1C62EEAA00A6188F /* FlipClip */ = {
 			isa = PBXGroup;
 			children = (
+				028B85881CC801AC00A3F9F1 /* Sign In */,
 				02563B2C1C7BCFD5000DE196 /* CameraController.swift */,
 				02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */,
 				02E170381C62EEAA00A6188F /* Main.storyboard */,
@@ -381,6 +395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */,
+				028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */,
 				026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */,
 				02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */,
 				02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */,
