@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */; };
+		024EC9951CC8290600A21A2C /* FCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9941CC8290600A21A2C /* FCUser.swift */; };
+		024EC9981CC82DBD00A21A2C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9971CC82DBD00A21A2C /* StringExtension.swift */; };
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B13221CC0406B00BE01FF /* TabsViewController.swift */; };
 		028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCreateAccountTableViewController.swift; sourceTree = "<group>"; };
+		024EC9941CC8290600A21A2C /* FCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCUser.swift; sourceTree = "<group>"; };
+		024EC9971CC82DBD00A21A2C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlipClip-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -125,6 +129,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024EC9931CC828FA00A21A2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				024EC9941CC8290600A21A2C /* FCUser.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		024EC9961CC82D9900A21A2C /* Extensions & Utils */ = {
+			isa = PBXGroup;
+			children = (
+				024EC9971CC82DBD00A21A2C /* StringExtension.swift */,
+			);
+			name = "Extensions & Utils";
+			sourceTree = "<group>";
+		};
 		028B85881CC801AC00A3F9F1 /* Sign In */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +179,8 @@
 		02E1702B1C62EEAA00A6188F /* FlipClip */ = {
 			isa = PBXGroup;
 			children = (
+				024EC9961CC82D9900A21A2C /* Extensions & Utils */,
+				024EC9931CC828FA00A21A2C /* Models */,
 				028B85881CC801AC00A3F9F1 /* Sign In */,
 				02563B2C1C7BCFD5000DE196 /* CameraController.swift */,
 				02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */,
@@ -395,9 +417,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024EC9951CC8290600A21A2C /* FCUser.swift in Sources */,
 				024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */,
 				028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */,
 				026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */,
+				024EC9981CC82DBD00A21A2C /* StringExtension.swift in Sources */,
 				02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */,
 				02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */,
 				02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */,
