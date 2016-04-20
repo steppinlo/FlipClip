@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21E15495C5515540CCED4C8AC8061D79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */; };
-		A967EF996E0CEA93E82CC89C2A1DBF50 /* Pods-FlipClip-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */; };
+		47E376023942EE9F071496191C1C74F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		A967EF996E0CEA93E82CC89C2A1DBF50 /* Pods-FlipClip-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BDA613783FDE60D98EC04FCC3B7727 /* Pods-FlipClip-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.debug.xcconfig"; sourceTree = "<group>"; };
-		1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlipClip-dummy.m"; sourceTree = "<group>"; };
-		205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		26EB2B30CDE77261F16DAD0B0EA329EF /* libKinveyKit.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libKinveyKit.a; path = "KinveyKit-1.40.4/libKinveyKit.a"; sourceTree = "<group>"; };
-		45DDB5997E17B9AD5CCAC18C589A6FBF /* Pods-FlipClip-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlipClip-acknowledgements.plist"; sourceTree = "<group>"; };
-		71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		854A5F913F3D4442020AF9233EFDF0AE /* Pods-FlipClip-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlipClip-acknowledgements.markdown"; sourceTree = "<group>"; };
-		915266AEAB28A21BEF5BEDB40A40DDEB /* Pods-FlipClip-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlipClip-resources.sh"; sourceTree = "<group>"; };
-		B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.release.xcconfig"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6170AC2F4876E96130433C396C714195 /* Pods-FlipClip-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlipClip-acknowledgements.plist"; sourceTree = "<group>"; };
+		6B871EAE506CCB3BE628724A37D1AEFD /* Pods-FlipClip-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlipClip-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7693296D5809A417FEFF2D1F53B84391 /* libPods-FlipClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9113F1291E789B8EDB363E6B98888D /* Pods-FlipClip-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlipClip-frameworks.sh"; sourceTree = "<group>"; };
+		A2F25136E5D0F48FE2A07C0DBFE5C0E6 /* Pods-FlipClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.debug.xcconfig"; sourceTree = "<group>"; };
+		B20B4BC7906A33E3E47BF676532928A1 /* Pods-FlipClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlipClip.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E8BDA613783FDE60D98EC04FCC3B7727 /* Pods-FlipClip-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlipClip-dummy.m"; sourceTree = "<group>"; };
+		FE34BF39D249E899034F6FDAFD5E0681 /* Pods-FlipClip-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlipClip-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,13 +30,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E15495C5515540CCED4C8AC8061D79 /* Foundation.framework in Frameworks */,
+				47E376023942EE9F071496191C1C74F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DAE2A9A25826CDD737D171BFFBD85E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7693296D5809A417FEFF2D1F53B84391 /* libPods-FlipClip.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4662DE627FCF5930D4EA2666EEAE2B8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -44,12 +53,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+		4ABE8C9C7FA23562358934BF9FEF3A96 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				205FC930B7CBA91FC52DEBBE2F569F86 /* Foundation.framework */,
+				5B966C2BA9FDC54E34DF0722D8F9DD2C /* Pods-FlipClip */,
 			);
-			name = iOS;
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5B966C2BA9FDC54E34DF0722D8F9DD2C /* Pods-FlipClip */ = {
+			isa = PBXGroup;
+			children = (
+				6B871EAE506CCB3BE628724A37D1AEFD /* Pods-FlipClip-acknowledgements.markdown */,
+				6170AC2F4876E96130433C396C714195 /* Pods-FlipClip-acknowledgements.plist */,
+				E8BDA613783FDE60D98EC04FCC3B7727 /* Pods-FlipClip-dummy.m */,
+				8E9113F1291E789B8EDB363E6B98888D /* Pods-FlipClip-frameworks.sh */,
+				FE34BF39D249E899034F6FDAFD5E0681 /* Pods-FlipClip-resources.sh */,
+				A2F25136E5D0F48FE2A07C0DBFE5C0E6 /* Pods-FlipClip.debug.xcconfig */,
+				B20B4BC7906A33E3E47BF676532928A1 /* Pods-FlipClip.release.xcconfig */,
+			);
+			name = "Pods-FlipClip";
+			path = "Target Support Files/Pods-FlipClip";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -58,17 +82,9 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				87D6D6AABB4730C2F710E08B9A95324D /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				855C066B2174B86EA62C2F8BC5632D1F /* Targets Support Files */,
+				0DAE2A9A25826CDD737D171BFFBD85E7 /* Products */,
+				4ABE8C9C7FA23562358934BF9FEF3A96 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		855C066B2174B86EA62C2F8BC5632D1F /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F57197BBE626681A0E236109C8204F20 /* Pods-FlipClip */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		87D6D6AABB4730C2F710E08B9A95324D /* Pods */ = {
@@ -90,31 +106,17 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */,
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F57197BBE626681A0E236109C8204F20 /* Pods-FlipClip */ = {
-			isa = PBXGroup;
-			children = (
-				854A5F913F3D4442020AF9233EFDF0AE /* Pods-FlipClip-acknowledgements.markdown */,
-				45DDB5997E17B9AD5CCAC18C589A6FBF /* Pods-FlipClip-acknowledgements.plist */,
-				1EBAA0190EDA1342F3FE0C579A5860CE /* Pods-FlipClip-dummy.m */,
-				915266AEAB28A21BEF5BEDB40A40DDEB /* Pods-FlipClip-resources.sh */,
-				141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */,
-				B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */,
-			);
-			name = "Pods-FlipClip";
-			path = "Target Support Files/Pods-FlipClip";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +135,7 @@
 			);
 			name = "Pods-FlipClip";
 			productName = "Pods-FlipClip";
-			productReference = 71908358DFBD8BD1548C66C702B7FFB9 /* libPods-FlipClip.a */;
+			productReference = 7693296D5809A417FEFF2D1F53B84391 /* libPods-FlipClip.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +155,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 0DAE2A9A25826CDD737D171BFFBD85E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -174,38 +176,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		159C5ADC1C0042338BC8B6598C7AF26A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B118EA0428A7B90EBE35D78E7F8EB99B /* Pods-FlipClip.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		1D31C6FA92E4882807E8E00A4AA7B30D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 141B3F1C5EC5458A628AE0337791037F /* Pods-FlipClip.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -244,6 +214,40 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		C0669B36A7D5656293080F7A3755ABF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2F25136E5D0F48FE2A07C0DBFE5C0E6 /* Pods-FlipClip.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C4643B226DE0253D6FF1776DD74B7760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B20B4BC7906A33E3E47BF676532928A1 /* Pods-FlipClip.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -285,8 +289,8 @@
 		145F0D632F373677619EF70924A3B800 /* Build configuration list for PBXNativeTarget "Pods-FlipClip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D31C6FA92E4882807E8E00A4AA7B30D /* Debug */,
-				159C5ADC1C0042338BC8B6598C7AF26A /* Release */,
+				C0669B36A7D5656293080F7A3755ABF5 /* Debug */,
+				C4643B226DE0253D6FF1776DD74B7760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

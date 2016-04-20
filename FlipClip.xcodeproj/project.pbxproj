@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B13221CC0406B00BE01FF /* TabsViewController.swift */; };
+		028B85811CC7FCC200A3F9F1 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028B85801CC7FCC200A3F9F1 /* KinveyKit.framework */; };
 		02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */; };
 		02BAF5081CC0093A00AE35F1 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */; };
 		02E1703A1C62EEAA00A6188F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E170381C62EEAA00A6188F /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		028B85801CC7FCC200A3F9F1 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KinveyKit.framework; path = ../../../../Library/Frameworks/KinveyKit.framework; sourceTree = "<group>"; };
+		028B85821CC7FD0800A3F9F1 /* FlipClip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlipClip-Bridging-Header.h"; sourceTree = "<group>"; };
 		02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
 		02E170291C62EEAA00A6188F /* FlipClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028B85811CC7FCC200A3F9F1 /* KinveyKit.framework in Frameworks */,
 				02E170791C63DFCC00A6188F /* WebKit.framework in Frameworks */,
 				02E170771C63DFC200A6188F /* Security.framework in Frameworks */,
 				02E170751C63DF9900A6188F /* libsqlite3.tbd in Frameworks */,
@@ -153,6 +157,7 @@
 				02E1702C1C62EEAA00A6188F /* Supporting Files */,
 				02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */,
 				026B13221CC0406B00BE01FF /* TabsViewController.swift */,
+				028B85821CC7FD0800A3F9F1 /* FlipClip-Bridging-Header.h */,
 			);
 			path = FlipClip;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 		B6D2AF61DF0785C1F1F0675A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				028B85801CC7FCC200A3F9F1 /* KinveyKit.framework */,
 				02E170781C63DFCC00A6188F /* WebKit.framework */,
 				02E170761C63DFC200A6188F /* Security.framework */,
 				02E170741C63DF9900A6188F /* libsqlite3.tbd */,
@@ -223,6 +229,7 @@
 				02E170261C62EEAA00A6188F /* Frameworks */,
 				02E170271C62EEAA00A6188F /* Resources */,
 				31921501B10EB79948818252 /* Copy Pods Resources */,
+				1FC2AECA5B9248CC57CAF6AA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,6 +347,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FC2AECA5B9248CC57CAF6AA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlipClip/Pods-FlipClip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		31921501B10EB79948818252 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,13 +545,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = FlipClip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = slope.FlipClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlipClip/FlipClip-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -542,13 +569,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = FlipClip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = slope.FlipClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlipClip/FlipClip-Bridging-Header.h";
 			};
 			name = Release;
 		};
