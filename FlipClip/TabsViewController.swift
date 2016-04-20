@@ -43,14 +43,8 @@ class TabsViewController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         if viewController.classForCoder == CameraController.self {
-//            self.cameraDelegate?.showCamera()
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Camera") as! UIImagePickerController
-            vc.sourceType = .Camera
-            vc.showsCameraControls = true
-            vc.mediaTypes = [kUTTypeMovie as String]
-            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Camera") as! CameraController
             presentViewController(vc, animated: true, completion: nil)
-//            self.performSegueWithIdentifier("showModalView", sender: nil)
             return false
         }
         return true

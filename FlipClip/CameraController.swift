@@ -20,6 +20,23 @@ class CameraController: UIImagePickerController, UIImagePickerControllerDelegate
 //    var selectedObject: PFObject?
 //    var selectedCollection: NSString = ""
     
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    override func viewDidLoad() {
+        self.delegate = self
+        self.sourceType = .Camera
+        self.mediaTypes = [kUTTypeMovie as String]
+        self.allowsEditing = false
+        self.showsCameraControls = true
+    }
+    
+    
     func showCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             
@@ -44,27 +61,7 @@ class CameraController: UIImagePickerController, UIImagePickerControllerDelegate
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-
-        self.tabBarController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-            print(self.tabBarController?.selectedViewController)
-        })
-        self.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
-//        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-//        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-//        dismissViewControllerAnimated(true) { () -> Void in
-//            self.navigationController?.popToRootViewControllerAnimated(true)
-//        }
-//        if (tabBarController == nil){
-//            print("uhoh! yay!")
-//            self.performSegueWithIdentifier("goHome", sender: self)
-//        } else {
-//            dismissViewControllerAnimated(true, completion: nil)
-//            redirectPage()
-//        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-//        showCamera()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
