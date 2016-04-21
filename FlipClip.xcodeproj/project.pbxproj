@@ -15,6 +15,8 @@
 		024EC99E1CC91B5600A21A2C /* FCVideoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC99D1CC91B5600A21A2C /* FCVideoCollection.swift */; };
 		024EC9A11CC925C300A21A2C /* FCVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9A01CC925C300A21A2C /* FCVideoController.swift */; };
 		024EC9A31CC95C4400A21A2C /* FCVideoCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9A21CC95C4400A21A2C /* FCVideoCollectionController.swift */; };
+		024EC9A51CC96A8500A21A2C /* FCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */; };
+		024EC9A71CC990D200A21A2C /* AVCamPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */; };
 		02563B2D1C7BCFD5000DE196 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02563B2C1C7BCFD5000DE196 /* CameraController.swift */; };
 		026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B13221CC0406B00BE01FF /* TabsViewController.swift */; };
 		028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */; };
@@ -66,6 +68,8 @@
 		024EC99D1CC91B5600A21A2C /* FCVideoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCVideoCollection.swift; sourceTree = "<group>"; };
 		024EC9A01CC925C300A21A2C /* FCVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCVideoController.swift; sourceTree = "<group>"; };
 		024EC9A21CC95C4400A21A2C /* FCVideoCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCVideoCollectionController.swift; sourceTree = "<group>"; };
+		024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCameraViewController.swift; sourceTree = "<group>"; };
+		024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCamPreviewView.swift; sourceTree = "<group>"; };
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlipClip-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		02E1702B1C62EEAA00A6188F /* FlipClip */ = {
 			isa = PBXGroup;
 			children = (
+				02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */,
+				026B13221CC0406B00BE01FF /* TabsViewController.swift */,
 				024EC9961CC82D9900A21A2C /* Extensions & Utils */,
 				024EC9931CC828FA00A21A2C /* Models */,
 				024EC99F1CC925B300A21A2C /* Controllers */,
@@ -212,9 +218,9 @@
 				02E1703D1C62EEAA00A6188F /* LaunchScreen.storyboard */,
 				02E170401C62EEAA00A6188F /* Info.plist */,
 				02E1702C1C62EEAA00A6188F /* Supporting Files */,
-				02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */,
-				026B13221CC0406B00BE01FF /* TabsViewController.swift */,
 				028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */,
+				024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */,
+				024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */,
 			);
 			path = FlipClip;
 			sourceTree = "<group>";
@@ -441,9 +447,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				024EC99C1CC91B4800A21A2C /* FCVideo.swift in Sources */,
+				024EC9A71CC990D200A21A2C /* AVCamPreviewView.swift in Sources */,
 				024EC9951CC8290600A21A2C /* FCUser.swift in Sources */,
 				024EC9A31CC95C4400A21A2C /* FCVideoCollectionController.swift in Sources */,
 				024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */,
+				024EC9A51CC96A8500A21A2C /* FCCameraViewController.swift in Sources */,
 				024EC99E1CC91B5600A21A2C /* FCVideoCollection.swift in Sources */,
 				028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */,
 				026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */,

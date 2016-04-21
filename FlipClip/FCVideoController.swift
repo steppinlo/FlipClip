@@ -55,6 +55,8 @@ class FCVideoController: NSObject {
                 } else {
                     //save was successful
                     NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                    let video = objectsOrNil[0] as! FCVideo
+                    FCVideoCollectionController.addVideoToCollection(video.videoId, collection: nil)
                 }
             },
             withProgressBlock: nil
