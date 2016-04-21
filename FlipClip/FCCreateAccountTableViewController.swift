@@ -88,6 +88,7 @@ class FCCreateAccountTableViewController: UIViewController, UITextFieldDelegate,
                         cancelButtonTitle: NSLocalizedString("OK", comment: "OK")
                     )
                     alert.show()
+                    self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     //there was an error with the update save
                     let message = errorOrNil.localizedDescription

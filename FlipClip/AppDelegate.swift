@@ -24,16 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController.init(rootViewController: signIn)
         
         
-        
-        
-        print(self.window?.rootViewController)
         if let _ = KCSUser.activeUser() {
-            print("there is a user")
-            print(KCSUser.activeUser().username)
+     //       do nothing
         } else {
             self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
         }
-        
+    
         self.navigationBarAppearance()
         self.window?.makeKeyAndVisible()
     }

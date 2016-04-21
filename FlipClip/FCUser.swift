@@ -9,7 +9,9 @@
 import Foundation
 
 class FCUser: NSObject {
-    var username: String!
-    var email: String!
+    var entityId: String?
+    var username: String?
+    var email: String?
+    var friends: String?
 }
 

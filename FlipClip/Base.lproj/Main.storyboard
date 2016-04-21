@@ -189,7 +189,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSh-Nv-sOf">
-                                                    <rect key="frame" x="63" y="5" width="473" height="40"/>
+                                                    <rect key="frame" x="32" y="5" width="535" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="kaN-zc-QsV"/>
                                                     </constraints>
@@ -201,7 +201,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RSh-Nv-sOf" firstAttribute="centerX" secondItem="8tG-Wz-7XM" secondAttribute="centerX" id="R0E-bo-k2L"/>
-                                                <constraint firstItem="RSh-Nv-sOf" firstAttribute="leading" secondItem="8tG-Wz-7XM" secondAttribute="leadingMargin" constant="55" id="SmP-gM-UF6"/>
+                                                <constraint firstItem="RSh-Nv-sOf" firstAttribute="leading" secondItem="8tG-Wz-7XM" secondAttribute="leadingMargin" constant="24" id="SmP-gM-UF6"/>
                                                 <constraint firstItem="RSh-Nv-sOf" firstAttribute="centerY" secondItem="8tG-Wz-7XM" secondAttribute="centerY" id="rFx-PW-dGP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -220,11 +220,20 @@
                                                         <action selector="createAccountPressed:" destination="HbX-6u-G1o" eventType="touchUpInside" id="Ei1-gq-NHc"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-I8-Eoh">
+                                                    <rect key="frame" x="277" y="19" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="logout:" destination="HbX-6u-G1o" eventType="touchUpInside" id="2hj-Fl-hdw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="m1H-aq-UDf" secondAttribute="trailing" id="6Jb-4f-a7L"/>
                                                 <constraint firstItem="m1H-aq-UDf" firstAttribute="top" secondItem="7og-Z5-rTg" secondAttribute="topMargin" constant="54" id="DXv-PJ-9Xi"/>
+                                                <constraint firstItem="bDd-I8-Eoh" firstAttribute="centerX" secondItem="m1H-aq-UDf" secondAttribute="centerX" id="G3k-Ce-LfR"/>
                                                 <constraint firstItem="m1H-aq-UDf" firstAttribute="leading" secondItem="7og-Z5-rTg" secondAttribute="leading" id="pd1-Fx-AGj"/>
+                                                <constraint firstItem="m1H-aq-UDf" firstAttribute="top" secondItem="bDd-I8-Eoh" secondAttribute="bottom" constant="13" id="r1k-bf-Xqi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -240,6 +249,7 @@
                         <outlet property="createAccountButton" destination="m1H-aq-UDf" id="bVj-c1-YYF"/>
                         <outlet property="createAccountCell" destination="3EO-Pn-2RE" id="FuE-qS-nTJ"/>
                         <outlet property="headerCell" destination="jnV-No-4gM" id="w2f-bF-Lpa"/>
+                        <outlet property="logoutButton" destination="bDd-I8-Eoh" id="PeX-22-vNd"/>
                         <outlet property="passwordCell" destination="hvj-sk-d6J" id="Hjf-ib-hnp"/>
                         <outlet property="passwordTextField" destination="TOb-xu-J2S" id="dLb-c4-4Y2"/>
                         <outlet property="submitCell" destination="kNN-O9-rcr" id="k4r-6P-Xca"/>

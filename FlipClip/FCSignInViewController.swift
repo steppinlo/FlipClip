@@ -19,6 +19,7 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var passwordCell: UITableViewCell!
     
+    @IBOutlet weak var logoutButton: UIButton!
     var username: String!
     var password: String!
     
@@ -81,7 +82,7 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
                     if errorOrNil == nil {
                         //the log-in was successful and the user is now the active user and credentials saved
                         //hide log-in view and show main app content
-                        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                        self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
                         //there was an error with the update save
                         let message = errorOrNil.localizedDescription
@@ -102,6 +103,10 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
         let setUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SignUp") as! FCCreateAccountTableViewController
         self.navigationController?.pushViewController(setUp, animated: true)
         //self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        KCSUser.activeUser().logout()
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
