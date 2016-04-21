@@ -19,6 +19,9 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var passwordCell: UITableViewCell!
     
+    var username: String!
+    var password: String!
+    
     let kSignInHeader = 0
     let kSignInUsername = 1
     let kSignInPassword = 2
@@ -57,12 +60,45 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField == self.usernameTextField {
+            self.username = textField.text
+        } else if textField == self.passwordTextField {
+            self.password = textField.text
+        }
+    }
+    
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
+    @IBAction func submitPressed(sender: AnyObject) {
+        if let _  = self.password, let _ = self.username {
+            KCSUser.loginWithUsername(
+                self.username,
+                password: self.password,
+                withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
+                    if errorOrNil == nil {
+                        //the log-in was successful and the user is now the active user and credentials saved
+                        //hide log-in view and show main app content
+                        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        //there was an error with the update save
+                        let message = errorOrNil.localizedDescription
+                        let alert = UIAlertView(
+                            title: NSLocalizedString("Create account failed", comment: "Sign account failed"),
+                            message: message,
+                            delegate: nil,
+                            cancelButtonTitle: NSLocalizedString("OK", comment: "OK")
+                        )
+                        alert.show()
+                    }
+                }
+            )
+        }
+    }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
+    @IBAction func createAccountPressed(sender: AnyObject) {
         let setUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SignUp") as! FCCreateAccountTableViewController
         self.navigationController?.pushViewController(setUp, animated: true)
         //self.navigationController?.dismissViewControllerAnimated(true, completion: nil)

@@ -194,6 +194,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="kaN-zc-QsV"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="submitPressed:" destination="HbX-6u-G1o" eventType="touchUpInside" id="yRv-AI-oX8"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -214,7 +217,7 @@
                                                     <rect key="frame" x="0.0" y="62" width="600" height="30"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="buttonPressed:" destination="HbX-6u-G1o" eventType="touchUpInside" id="c9s-l7-PWl"/>
+                                                        <action selector="createAccountPressed:" destination="HbX-6u-G1o" eventType="touchUpInside" id="Ei1-gq-NHc"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -239,7 +242,6 @@
                         <outlet property="headerCell" destination="jnV-No-4gM" id="w2f-bF-Lpa"/>
                         <outlet property="passwordCell" destination="hvj-sk-d6J" id="Hjf-ib-hnp"/>
                         <outlet property="passwordTextField" destination="TOb-xu-J2S" id="dLb-c4-4Y2"/>
-                        <outlet property="submitButton" destination="RSh-Nv-sOf" id="iOo-FJ-jXp"/>
                         <outlet property="submitCell" destination="kNN-O9-rcr" id="k4r-6P-Xca"/>
                         <outlet property="usernameCell" destination="CBL-tM-K5A" id="cys-XG-xrv"/>
                         <outlet property="usernameTextField" destination="kf1-cr-XSC" id="2R5-WT-Mx0"/>

@@ -23,17 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
         let nav = UINavigationController.init(rootViewController: signIn)
         
-        self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
-        self.window?.makeKeyAndVisible()
+        
+        
         
         print(self.window?.rootViewController)
         if let _ = KCSUser.activeUser() {
             print("there is a user")
+            print(KCSUser.activeUser().username)
         } else {
-            print("no user!")
+            self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
         }
         
         self.navigationBarAppearance()
+        self.window?.makeKeyAndVisible()
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
