@@ -18,50 +18,65 @@ class FCCreateAccountTableViewController: UIViewController, UITextFieldDelegate,
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.nameField.becomeFirstResponder()
-        setupTextField(self.nameField, placeholder: "Username")
-        setupTextField(self.emailField, placeholder: "Email")
-        setupTextField(self.passwordField, placeholder: "Password")
+        setupTextField(self, field: self.nameField, placeholder: "Username")
+        setupTextField(self, field: self.emailField, placeholder: "Email")
+        setupTextField(self, field: self.passwordField, placeholder: "Password (min 6 characters)")
 
+        self.createButton.backgroundColor = UIColor.orangeColor()
+        self.createButton.setTitle("Create Account", forState: .Normal)
+        self.createButton.setTitleColor(UIColor.init(white: 1, alpha: 0.5), forState: .Disabled)
+        self.createButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.createButton.layer.cornerRadius = 14
+        self.createButton.enabled = false
+        self.createButton.addTarget(self, action: "createUser", forControlEvents: .TouchUpInside)
         
         let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tap)
     }
     
-    func setupTextField(field: UITextField, placeholder: String) {
-        field.layer.borderWidth = 1
-        field.layer.cornerRadius = 5
-        field.placeholder = placeholder
-        field.contentVerticalAlignment = .Center
-        field.delegate = self
-    }
+    
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField.text?.characters.count > 0 {
             switch textField {
             case self.nameField:
-                self.nameField.text = textField.text
+                if textField.text!.characters.count > 3 {
+                    self.name = textField.text
+                }
             case self.emailField:
-                if self.emailField.text!.validEmail {
-                    print("hey it's valid!")
+                if textField.text!.validEmail {
+                    self.email = textField.text
+                }
+            case self.passwordField:
+                if textField.text?.characters.count > 6 {
+                    self.password = textField.text
                 }
             default:
-                print("hello")
+                break
             }
         }
+        self.createButton.enabled = self.checkValidForm()
+    }
+    
+    func checkValidForm() -> Bool {
+        if let _ = self.name, let _ = self.email, let _ = self.password {
+            return true
+        }
+        return false
     }
     
     func createUser() {
         KCSUser.userWithUsername(
-            "kinvey",
-            password: "12345",
+            self.name,
+            password: self.password,
             fieldsAndValues: [
-                KCSUserAttributeEmail : "kinvey@kinvey.com",
-                KCSUserAttributeGivenname : "Arnold",
-                KCSUserAttributeSurname : "Kinvey"
+                KCSUserAttributeEmail : self.email,
             ],
             withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
                 if errorOrNil == nil {
