@@ -61,24 +61,19 @@ class VideoListTableViewController: UITableViewController {
 //                let vc = storyboard.instantiateViewControllerWithIdentifier("CameraVC")
 //                self.navigationController?.pushViewController(vc, animated: true)
         
-        KCSFileStore.getStreamingURL(
-            video.videoId,
-            completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
-                if error != nil { return }
-                self.videoURL = streamingResource.remoteURL
-                let destination = AVPlayerViewController()
-                let player = AVPlayer(URL: self.videoURL)
-                destination.player = player
-                let view = UIView()
-                view.backgroundColor = UIColor.clearColor()
-                destination.view.addSubview(view)
-                destination.videoGravity = AVLayerVideoGravityResizeAspectFill
-                
-                self.presentViewController(destination, animated: true) { () -> Void in
-                    destination.player!.play()
-                }
+        FCVideoController.fetchVideoURL(video, success: { (videoURL) -> Void in
+            let destination = AVPlayerViewController()
+            let player = AVPlayer(URL: videoURL)
+            destination.player = player
+            destination.videoGravity = AVLayerVideoGravityResizeAspectFill
+            
+            self.presentViewController(destination, animated: true) { () -> Void in
+                destination.player!.play()
             }
-        )
+
+            }) { (error) -> Void in
+                print("ERROR!")
+        }
         
     }
     
