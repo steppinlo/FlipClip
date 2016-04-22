@@ -12,7 +12,7 @@ class FCVideoCollection: NSObject {
     var entityId: String?
     var videoSet: [String]?
     var videoURL: FCVideo?
-    var authors: [String]?
+    var authors: [KCSUser]?
     var metadata: KCSMetadata?
     
     internal override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
@@ -27,6 +27,7 @@ class FCVideoCollection: NSObject {
     
     internal static override func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
         return [
+            "authors", KCSUserCollectionName,
             "videoURL": "Video"
         ]
     }
