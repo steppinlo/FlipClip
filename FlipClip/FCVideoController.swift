@@ -44,7 +44,7 @@ class FCVideoController: NSObject {
     class func saveVideoObject(videoId: String) {
         let video = FCVideo()
         video.videoId = videoId
-        video.author = KCSUser.activeUser().userId
+        video.author = KCSUser.activeUser().username
         
         store.saveObject(
             video,

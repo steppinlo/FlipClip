@@ -49,7 +49,12 @@ class VideoListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FCVideoListTableViewCell
         cell.backgroundColor = UIColor.orangeColor()
         cell.cellLabel.text = self.videoList[indexPath.row].videoId
+        cell.collabLabel.text = self.videoList[indexPath.row].author
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -91,6 +96,7 @@ class VideoListTableViewController: UITableViewController {
 class FCVideoListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var collabLabel: UILabel!
 
     
 }

@@ -86,31 +86,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uB9-cp-gqn" customClass="FCVideoListTableViewCell" customModule="FlipClip" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="uB9-cp-gqn" customClass="FCVideoListTableViewCell" customModule="FlipClip" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uB9-cp-gqn" id="8In-AZ-hcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-Pg-vOZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-Pg-vOZ">
                                             <rect key="frame" x="21" y="8" width="449" height="28"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="449" id="mbg-1A-DlB"/>
+                                                <constraint firstAttribute="width" constant="449" id="gF4-xS-I2e"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVS-Sc-yyF">
+                                            <rect key="frame" x="21" y="64" width="449" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="4AB-Xb-wx1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-zX-joG">
+                                            <rect key="frame" x="512" y="35" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="leading" secondItem="8In-AZ-hcH" secondAttribute="leadingMargin" constant="13" id="M18-uP-mWq"/>
-                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="centerY" secondItem="8In-AZ-hcH" secondAttribute="centerY" id="eVL-zp-KHz"/>
-                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="top" secondItem="8In-AZ-hcH" secondAttribute="topMargin" id="ntp-jQ-Nsg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hVS-Sc-yyF" secondAttribute="bottom" constant="6.5" id="0xm-cA-eZI"/>
+                                        <constraint firstItem="hVS-Sc-yyF" firstAttribute="leading" secondItem="lsm-Pg-vOZ" secondAttribute="leading" id="6qv-Bl-jUe"/>
+                                        <constraint firstItem="gKt-zX-joG" firstAttribute="centerY" secondItem="8In-AZ-hcH" secondAttribute="centerY" id="Qvs-Jb-Mk6"/>
+                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="leading" secondItem="8In-AZ-hcH" secondAttribute="leadingMargin" constant="13" id="UPp-FP-Sdn"/>
+                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="trailing" secondItem="hVS-Sc-yyF" secondAttribute="trailing" id="VCN-qG-huU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lsm-Pg-vOZ" secondAttribute="trailing" constant="122" id="gLY-rp-eLy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gKt-zX-joG" secondAttribute="trailing" constant="34" id="p3B-uT-qcP"/>
+                                        <constraint firstItem="lsm-Pg-vOZ" firstAttribute="top" secondItem="8In-AZ-hcH" secondAttribute="topMargin" id="y0k-vo-F2u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cellLabel" destination="lsm-Pg-vOZ" id="tYF-1d-AGn"/>
+                                    <outlet property="collabLabel" destination="hVS-Sc-yyF" id="4ep-xl-qmc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
