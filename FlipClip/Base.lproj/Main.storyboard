@@ -111,9 +111,12 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-zX-joG">
-                                            <rect key="frame" x="512" y="35" width="46" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-zX-joG">
+                                            <rect key="frame" x="470" y="0.0" width="130" height="100"/>
                                             <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="addButton:" destination="uB9-cp-gqn" eventType="touchUpInside" id="cfT-IZ-yxr"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -123,11 +126,12 @@
                                         <constraint firstItem="lsm-Pg-vOZ" firstAttribute="leading" secondItem="8In-AZ-hcH" secondAttribute="leadingMargin" constant="13" id="UPp-FP-Sdn"/>
                                         <constraint firstItem="lsm-Pg-vOZ" firstAttribute="trailing" secondItem="hVS-Sc-yyF" secondAttribute="trailing" id="VCN-qG-huU"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="lsm-Pg-vOZ" secondAttribute="trailing" constant="122" id="gLY-rp-eLy"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="gKt-zX-joG" secondAttribute="trailing" constant="34" id="p3B-uT-qcP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gKt-zX-joG" secondAttribute="trailing" constant="-8" id="p3B-uT-qcP"/>
                                         <constraint firstItem="lsm-Pg-vOZ" firstAttribute="top" secondItem="8In-AZ-hcH" secondAttribute="topMargin" id="y0k-vo-F2u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addButton" destination="gKt-zX-joG" id="6wm-Dp-afq"/>
                                     <outlet property="cellLabel" destination="lsm-Pg-vOZ" id="tYF-1d-AGn"/>
                                     <outlet property="collabLabel" destination="hVS-Sc-yyF" id="4ep-xl-qmc"/>
                                 </connections>

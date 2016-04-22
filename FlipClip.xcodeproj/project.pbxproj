@@ -70,10 +70,10 @@
 		024EC9A21CC95C4400A21A2C /* FCVideoCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCVideoCollectionController.swift; sourceTree = "<group>"; };
 		024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCameraViewController.swift; sourceTree = "<group>"; };
 		024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCamPreviewView.swift; sourceTree = "<group>"; };
+		024EC9A81CCAAE4B00A21A2C /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		02563B2C1C7BCFD5000DE196 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		026B13221CC0406B00BE01FF /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlipClip-Bridging-Header.h"; sourceTree = "<group>"; };
-		028B85861CC7FFCC00A3F9F1 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		028B85891CC8089900A3F9F1 /* FCSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCSignInViewController.swift; sourceTree = "<group>"; };
 		02BAF5051CC002FD00AE35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		B6D2AF61DF0785C1F1F0675A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				028B85861CC7FFCC00A3F9F1 /* KinveyKit.framework */,
+				024EC9A81CCAAE4B00A21A2C /* KinveyKit.framework */,
 				02E170781C63DFCC00A6188F /* WebKit.framework */,
 				02E170761C63DFC200A6188F /* Security.framework */,
 				02E170741C63DF9900A6188F /* libsqlite3.tbd */,
@@ -292,6 +292,7 @@
 				02E170261C62EEAA00A6188F /* Frameworks */,
 				02E170271C62EEAA00A6188F /* Resources */,
 				31921501B10EB79948818252 /* Copy Pods Resources */,
+				74E9B64763EC03C7572C5B5B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -422,6 +423,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlipClip/Pods-FlipClip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74E9B64763EC03C7572C5B5B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlipClip/Pods-FlipClip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C46D5AC80E103A385AB01446 /* Check Pods Manifest.lock */ = {

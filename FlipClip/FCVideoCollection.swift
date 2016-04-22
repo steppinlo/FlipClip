@@ -11,6 +11,7 @@ import Foundation
 class FCVideoCollection: NSObject {
     var entityId: String?
     var videoSet: [String]?
+    var videoURL: FCVideo?
     var authors: [String]?
     var metadata: KCSMetadata?
     
@@ -19,8 +20,19 @@ class FCVideoCollection: NSObject {
             "entityId": KCSEntityKeyId,
             "videoSet": "videoSet",
             "authors": "authors",
+            "videoURL": "videoURL",
             "metadata": KCSEntityKeyMetadata
         ]
+    }
+    
+    internal static override func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+        return [
+            "videoURL": "Video"
+        ]
+    }
+    
+    internal override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
+        return ["videoURL"]
     }
     
 }

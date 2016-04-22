@@ -1,1 +1,1 @@
-../../../KinveyKit/KinveyKit-1.40.4/include/KinveyKit/KCSPing2.h
+../../../KinveyKit/KinveyKit-1.40.7/include/KinveyKit/KCSPing2.h

@@ -12,8 +12,8 @@ class FCVideo: NSObject {
     var entityId: String?
     var name: String?
     var videoId: String?
-    var author: String?
-    var collection: [String]?
+    var author: KCSUser?
+    var collection: FCVideoCollection?
     var metadata: KCSMetadata?
     
     internal override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
@@ -29,8 +29,13 @@ class FCVideo: NSObject {
     
     internal static override func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
         return [
+            "author" : KCSUserCollectionName,
             "collection": "VideoCollection"
         ]
+    }
+    
+    internal override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
+        return ["collection"]
     }
     
     

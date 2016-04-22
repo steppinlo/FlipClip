@@ -14,17 +14,34 @@ class FCVideoCollectionController: NSObject {
         KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
         ])
     
-    class func addVideoToCollection(videoId: String!, collection: FCVideoCollection?) {
+    class func createNewCollection(videoId: String!) {
+        
+    }
+    
+    class func addVideoToCollection(videoId: String!, var collection: FCVideoCollection?, video: FCVideo) {
         //after saving video. update or create new collection
         
-        let saveCollection = FCVideoCollection()
-        if let _ = collection {
-            saveCollection.videoSet?.append(videoId)
+//        let saveCollection = FCVideoCollection()
+        if let collection = collection {
+            collection.videoSet?.append(videoId)
+            if let authors = collection.authors {
+                if collection.authors!.contains(KCSUser.activeUser().username) {
+                    collection.authors!.append(KCSUser.activeUser().username)
+                }
+            }
+            
         } else {
-            saveCollection.videoSet = [videoId]
+            collection = FCVideoCollection()
+            collection!.videoSet = [videoId]
+            collection?.authors = [KCSUser.activeUser().username]
         }
+        
+        collection?.videoURL = video
+        
+        
+        
         collectionStore.saveObject(
-            saveCollection,
+            collection,
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
                 if errorOrNil != nil {
                     //save failed

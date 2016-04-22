@@ -44,7 +44,7 @@ class FCVideoController: NSObject {
     class func saveVideoObject(videoId: String) {
         let video = FCVideo()
         video.videoId = videoId
-        video.author = KCSUser.activeUser().username
+        video.author = KCSUser.activeUser()
         
         store.saveObject(
             video,
@@ -56,7 +56,7 @@ class FCVideoController: NSObject {
                     //save was successful
                     NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
                     let video = objectsOrNil[0] as! FCVideo
-                    FCVideoCollectionController.addVideoToCollection(video.videoId, collection: nil)
+                    FCVideoCollectionController.addVideoToCollection(video.videoId, collection: nil, video: video)
                 }
             },
             withProgressBlock: nil
