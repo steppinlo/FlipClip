@@ -25,15 +25,15 @@ class FCVideoCollectionController: NSObject {
         if let collection = collection {
             collection.videoSet?.append(videoId)
             if let authors = collection.authors {
-                if collection.authors!.contains(KCSUser.activeUser().username) {
-                    collection.authors!.append(KCSUser.activeUser().username)
-                }
+//                if collection.authors!.contains(KCSUser.activeUser()) {
+//                    collection.authors!.append(KCSUser.activeUser())
+//                }
             }
             
         } else {
             collection = FCVideoCollection()
             collection!.videoSet = [videoId]
-            collection?.authors = [KCSUser.activeUser().username]
+            collection?.authors = KCSUser.activeUser()
         }
         
         collection?.videoURL = video

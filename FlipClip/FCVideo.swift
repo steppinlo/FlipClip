@@ -35,7 +35,7 @@ class FCVideo: NSObject {
     }
     
     internal override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
-        return ["collection"]
+        return ["collection", "author"]
     }
     
     

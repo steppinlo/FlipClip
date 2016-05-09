@@ -34,9 +34,9 @@ class FCCreateAccountTableViewController: UIViewController, UITextFieldDelegate,
         self.createButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         self.createButton.layer.cornerRadius = 14
         self.createButton.enabled = false
-        self.createButton.addTarget(self, action: "createUser", forControlEvents: .TouchUpInside)
+        self.createButton.addTarget(self, action: #selector(FCCreateAccountTableViewController.createUser), forControlEvents: .TouchUpInside)
         
-        let tap = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(FCCreateAccountTableViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
     }
     

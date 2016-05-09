@@ -22,7 +22,7 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
+        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser())
         let store: KCSStore = KCSLinkedAppdataStore.storeWithOptions([
             KCSStoreKeyCollectionName : "VideoCollection",
             KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
@@ -49,7 +49,10 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FCVideoListTableViewCell
 //        cell.videoCollection = self.videoList[indexPath.row]
         if self.videoList.count > 0 {
-            cell.videoCollection = self.videoList[indexPath.row]
+//            cell.videoCollection = self.videoList[indexPath.row]
+
+            let video = self.videoList[0]
+            print(video.videoURL)
         }
         cell.backgroundColor = UIColor.orangeColor()
         return cell
@@ -109,7 +112,8 @@ class FCVideoListTableViewCell: UITableViewCell {
         didSet {
             self.cellLabel.text = self.videoCollection.entityId
             if let _ = self.videoCollection.authors {
-                self.collabLabel.text = self.videoCollection.authors!.first
+//                self.collabLabel.text = self.videoCollection.authors!.first
+                print (self.videoCollection.videoSet)
             }
         }
     }
