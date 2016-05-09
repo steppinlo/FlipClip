@@ -63,14 +63,11 @@ class FCVideoController: NSObject {
         )
     }
     
-    class func fetchVideoURL(video: FCVideo, success: (videoURL: NSURL)->Void, error: (error: NSError) -> Void) {
-        print(video)
+    class func fetchVideoURL(video: String, success: (videoURL: NSURL)->Void, error: (error: NSError) -> Void) {
         KCSFileStore.getStreamingURL(
-            video.videoId,
+            video,
             completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
                 if error != nil { return }
-                print("hello!")
-//                print(streamingResource.remoteURL)
                 success(videoURL: streamingResource.remoteURL)
                 
             }

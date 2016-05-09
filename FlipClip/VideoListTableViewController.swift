@@ -22,7 +22,7 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser())
+        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
         let store: KCSStore = KCSLinkedAppdataStore.storeWithOptions([
             KCSStoreKeyCollectionName : "VideoCollection",
             KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
@@ -66,19 +66,19 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let video = self.videoList[indexPath.row]
         
-//        FCVideoController.fetchVideoURL(video.videoSet!.first, success: { (videoURL) -> Void in
-//            let destination = AVPlayerViewController()
-//            let player = AVPlayer(URL: videoURL)
-//            destination.player = player
-//            destination.videoGravity = AVLayerVideoGravityResizeAspectFill
-//            
-//            self.presentViewController(destination, animated: true) { () -> Void in
-//                destination.player!.play()
-//            }
-//
-//            }) { (error) -> Void in
-//                print("ERROR!")
-//        }
+        FCVideoController.fetchVideoURL(video.videoSet!.first!, success: { (videoURL) -> Void in
+            let destination = AVPlayerViewController()
+            let player = AVPlayer(URL: videoURL)
+            destination.player = player
+            destination.videoGravity = AVLayerVideoGravityResizeAspectFill
+            
+            self.presentViewController(destination, animated: true) { () -> Void in
+                destination.player!.play()
+            }
+
+            }) { (error) -> Void in
+                print("ERROR!")
+        }
         
     }
     
