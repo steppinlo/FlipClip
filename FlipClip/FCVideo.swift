@@ -7,13 +7,14 @@
 //
 
 import Foundation
-
+//TO DO: Include NSURL location for the video!!
 class FCVideo: NSObject {
     var entityId: String?
     var name: String?
     var videoId: String?
     var author: KCSUser?
     var collection: FCVideoCollection?
+    var videoURL: NSURL?
     var metadata: KCSMetadata?
     
     internal override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
@@ -23,6 +24,7 @@ class FCVideo: NSObject {
             "videoId": "videoId",
             "collection": "collection",
             "author": "author",
+            "videoURL": "videoURL",
             "metadata": KCSEntityKeyMetadata
         ]
     }

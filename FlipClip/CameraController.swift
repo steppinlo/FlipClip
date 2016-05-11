@@ -40,7 +40,7 @@ class CameraController: UIImagePickerController, UIImagePickerControllerDelegate
         //gets nsdata of the object and sends it to the controller
         let recordedVideo = info[UIImagePickerControllerMediaURL] as! NSURL
         let videoData = NSData(contentsOfURL: recordedVideo)
-        FCVideoController.create(videoData!)        
+        FCVideoController.create(videoData!, collection: nil)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

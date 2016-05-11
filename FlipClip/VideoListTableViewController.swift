@@ -22,21 +22,28 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
-        let store: KCSStore = KCSLinkedAppdataStore.storeWithOptions([
-            KCSStoreKeyCollectionName : "VideoCollection",
-            KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
-            ])
+//        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
+//        let store: KCSStore = KCSLinkedAppdataStore.storeWithOptions([
+//            KCSStoreKeyCollectionName : "VideoCollection",
+//            KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
+//            ])
+//        
+//        store.queryWithQuery(
+//            query,
+//            withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
+//                //handle error or results...
+//                self.videoList = objectsOrNil as! [FCVideoCollection]
+//                self.tableView.reloadData()
+//            },
+//            withProgressBlock: nil
+//        )
         
-        store.queryWithQuery(
-            query,
-            withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
-                //handle error or results...
-                self.videoList = objectsOrNil as! [FCVideoCollection]
-                self.tableView.reloadData()
-            },
-            withProgressBlock: nil
-        )
+        FCVideoCollectionController.fetchCollection(KCSUser.activeUser().username, success: { (collection) in
+            self.videoList = collection
+            self.tableView.reloadData()
+            }) { (error) in
+                //figure out something with this...
+        }
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
      }
@@ -47,37 +54,31 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FCVideoListTableViewCell
-//        cell.videoCollection = self.videoList[indexPath.row]
         if self.videoList.count > 0 {
-//            cell.videoCollection = self.videoList[indexPath.row]
-
-            let video = self.videoList[0]
-            print(video.videoURL)
+            cell.videoCollection = self.videoList[indexPath.row]
         }
         cell.backgroundColor = UIColor.orangeColor()
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 300
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let video = self.videoList[indexPath.row]
         
-        FCVideoController.fetchVideoURL(video.videoSet!.first!, success: { (videoURL) -> Void in
-            let destination = AVPlayerViewController()
-            let player = AVPlayer(URL: videoURL)
-            destination.player = player
-            destination.videoGravity = AVLayerVideoGravityResizeAspectFill
-            
-            self.presentViewController(destination, animated: true) { () -> Void in
-                destination.player!.play()
-            }
-
-            }) { (error) -> Void in
-                print("ERROR!")
+        let destination = AVPlayerViewController()
+        let items = video.videoSet?.map({ (clip) -> NSURL in NSURL(string: clip)!
+        })
+        let videoPlaylist = items!.map({ clip in AVPlayerItem(URL: clip)})
+        destination.player = AVQueuePlayer(items: videoPlaylist)
+        destination.player?.actionAtItemEnd = .Pause
+        destination.videoGravity = AVLayerVideoGravityResizeAspectFill
+        
+        self.presentViewController(destination, animated: true) { () -> Void in
+            destination.player!.play()
         }
         
     }
@@ -105,23 +106,37 @@ protocol FCVideoListTableViewCellDelegate {
 
 class FCVideoListTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var collabLabel: UILabel!
     var videoCollection: FCVideoCollection! {
         didSet {
-            self.cellLabel.text = self.videoCollection.entityId
-            if let _ = self.videoCollection.authors {
-//                self.collabLabel.text = self.videoCollection.authors!.first
-                print (self.videoCollection.videoSet)
-            }
+            self.videoSet = FCVideoCollectionController.convertSetToNSURL(self.videoCollection.videoSet!)
+            print(self.videoSet)
         }
     }
     var delegate: FCVideoListTableViewCellDelegate!
+    var videoSet = [NSURL]() {
+        didSet {
+            self.thumbnail = FCVideoController.generateThumbnail(self.videoSet.first!)
+        }
+    }
+    var thumbnail: UIImage? {
+        didSet {
+            self.thumbnailImageView.image = thumbnail
+        }
+    }
+    
+    override func layoutSubviews() {
+        self.thumbnailImageView.contentMode = .ScaleAspectFit
+        self.thumbnailImageView.backgroundColor = UIColor.blackColor()
+    }
 
 
     @IBAction func addButton(sender: AnyObject) {
 //        self.delegate?.addVideo(self.videoCollection)
+        print("hello!")
     }
     
 }
