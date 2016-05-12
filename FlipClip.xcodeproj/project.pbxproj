@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023C16431CE5180700F6BB71 /* FCFriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C16421CE5180700F6BB71 /* FCFriendsListTableViewController.swift */; };
+		023C16451CE51C5700F6BB71 /* FCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C16441CE51C5700F6BB71 /* FCProfileViewController.swift */; };
 		024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */; };
 		024EC9951CC8290600A21A2C /* FCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9941CC8290600A21A2C /* FCUser.swift */; };
 		024EC9981CC82DBD00A21A2C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EC9971CC82DBD00A21A2C /* StringExtension.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023C16421CE5180700F6BB71 /* FCFriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCFriendsListTableViewController.swift; sourceTree = "<group>"; };
+		023C16441CE51C5700F6BB71 /* FCProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCProfileViewController.swift; sourceTree = "<group>"; };
 		024EC9911CC80E9300A21A2C /* FCCreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		024EC9941CC8290600A21A2C /* FCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCUser.swift; sourceTree = "<group>"; };
 		024EC9971CC82DBD00A21A2C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				028B85881CC801AC00A3F9F1 /* Sign In */,
 				02563B2C1C7BCFD5000DE196 /* CameraController.swift */,
 				02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */,
+				023C16421CE5180700F6BB71 /* FCFriendsListTableViewController.swift */,
 				02E170381C62EEAA00A6188F /* Main.storyboard */,
 				02E1703B1C62EEAA00A6188F /* Assets.xcassets */,
 				02E1703D1C62EEAA00A6188F /* LaunchScreen.storyboard */,
@@ -221,6 +226,7 @@
 				028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */,
 				024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */,
 				024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */,
+				023C16441CE51C5700F6BB71 /* FCProfileViewController.swift */,
 			);
 			path = FlipClip;
 			sourceTree = "<group>";
@@ -464,12 +470,14 @@
 			files = (
 				024EC99C1CC91B4800A21A2C /* FCVideo.swift in Sources */,
 				024EC9A71CC990D200A21A2C /* AVCamPreviewView.swift in Sources */,
+				023C16451CE51C5700F6BB71 /* FCProfileViewController.swift in Sources */,
 				024EC9951CC8290600A21A2C /* FCUser.swift in Sources */,
 				024EC9A31CC95C4400A21A2C /* FCVideoCollectionController.swift in Sources */,
 				024EC9921CC80E9300A21A2C /* FCCreateAccountTableViewController.swift in Sources */,
 				024EC9A51CC96A8500A21A2C /* FCCameraViewController.swift in Sources */,
 				024EC99E1CC91B5600A21A2C /* FCVideoCollection.swift in Sources */,
 				028B858A1CC8089900A3F9F1 /* FCSignInViewController.swift in Sources */,
+				023C16431CE5180700F6BB71 /* FCFriendsListTableViewController.swift in Sources */,
 				026B13231CC0406B00BE01FF /* TabsViewController.swift in Sources */,
 				024EC9981CC82DBD00A21A2C /* StringExtension.swift in Sources */,
 				02BAF5061CC002FD00AE35F1 /* AppDelegate.swift in Sources */,

@@ -15,10 +15,6 @@ class FCVideoCollectionController: NSObject {
         KCSStoreKeyCollectionTemplateClass : FCVideoCollection.self
         ])
     
-    class func createNewCollection(videoId: String!) {
-        
-    }
-    
     class func addVideoToCollection(videoId: String!, var collection: FCVideoCollection?, video: FCVideo) {
         //after saving video. update or create new collection
         
@@ -57,7 +53,9 @@ class FCVideoCollectionController: NSObject {
     }
     
     class func fetchCollection(user: String, success: ([FCVideoCollection])-> Void, failiure: (error: NSError)-> Void) {
-        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: user)
+        
+        let query = KCSQuery(onField: "authors", withExactMatchForValue: KCSUser.activeUser().username)
+//        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
         
         var queryResult = [FCVideoCollection]()
         
@@ -85,7 +83,12 @@ class FCVideoCollectionController: NSObject {
             KCSFileStore.getStreamingURL(
                 videoId,
                 completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
-                    if error != nil { failure(error) }
+                    if error != nil {
+                        failure(error)
+                        print("HEYYY")
+                        print(error.localizedDescription)
+                        return
+                    }
                     videoURLS.append(streamingResource.remoteURL)
                     if videoId == set.last { success(videoURLS) }
                 }
@@ -93,16 +96,18 @@ class FCVideoCollectionController: NSObject {
         }
     }
     
-    class func unpackURLsAndGenerateThumbnail(video: FCVideoCollection, success: (videos: [NSURL])->Void, failure: (error: NSError)->Void) {
+    class func unpackURLsAndGenerateThumbnail(set: [String], success: (videos: [NSURL], image: UIImage)->Void, failure: (error: NSError)->Void) {
         var videoURLS = [NSURL]()
-        for videoId in video.videoSet! {
+        var videoThumb = UIImage()
+        for videoId in set {
             KCSFileStore.getStreamingURL(
                 videoId,
                 completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
                     if error != nil { failure(error: error) }
                     videoURLS.append(streamingResource.remoteURL)
-                    if videoId == video.videoSet!.last {
-                        success(videos: videoURLS) }
+                    if videoId == set.first { videoThumb = FCVideoController.generateThumbnail(videoURLS.first!)! }
+                    if videoId == set.last {
+                        success(videos: videoURLS, image: videoThumb) }
                 }
             )
         }

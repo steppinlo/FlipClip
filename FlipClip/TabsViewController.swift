@@ -15,17 +15,20 @@ import AVFoundation
 class TabsViewController: UITabBarController, UITabBarControllerDelegate {
     var camera = CameraController()
     var videoList: UIViewController!
+    var profile: UIViewController!
     var previouslySelectedIndex: NSInteger!
 //    var cameraDelegate: CameraControllerDelegate?
     
     override func viewDidLoad() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.videoList = storyboard.instantiateViewControllerWithIdentifier("VideoList")
+        self.profile = storyboard.instantiateViewControllerWithIdentifier("Profile")
         let videoListNav = UINavigationController.init(rootViewController: self.videoList)
+        let profileNav = UINavigationController.init(rootViewController: self.profile)
         
         self.delegate = self
         
-        self.setViewControllers([videoListNav, self.camera], animated: false)
+        self.setViewControllers([videoListNav, self.camera, profileNav], animated: false)
         self.updateTabBarItems()
         
     }
@@ -33,6 +36,7 @@ class TabsViewController: UITabBarController, UITabBarControllerDelegate {
     func updateTabBarItems() {
         self.camera.tabBarItem = UITabBarItem.init(title: "Camera", image: UIImage(named: "first"), selectedImage: nil)
         self.videoList.tabBarItem = UITabBarItem.init(title: "VideoList", image: UIImage(named: "second"), selectedImage: nil)
+        self.profile.tabBarItem = UITabBarItem.init(title: "Profile", image: UIImage(named: "second"), selectedImage: nil)
         
     }
     
@@ -72,18 +76,6 @@ class TabsViewController: UITabBarController, UITabBarControllerDelegate {
         }
         return targetVC
     }
-    
-//    func selectSearchTabWithPushing(newVC: UIViewController) {
-//        if let viewControllers = self.viewControllers {
-//            for vc in viewControllers {
-//                if let targetNC = vc as? UINavigationController, let _ = targetNC.viewControllers.first as? PTXSearchFilterViewController {
-//                    // TODO: @@@ Search and Show results
-//                    targetNC.pushViewController(newVC, animated: false)
-//                    self.selectTab(PTXSearchFilterViewController)
-//                }
-//            }
-//        }
-//    }
     
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         if self.selectedIndex > 0 {

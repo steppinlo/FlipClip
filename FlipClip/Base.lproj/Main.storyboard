@@ -90,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uB9-cp-gqn" id="8In-AZ-hcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="299.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-ao-w0t">
@@ -106,7 +106,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-zX-joG">
-                                            <rect key="frame" x="471" y="249" width="129" height="50.5"/>
+                                            <rect key="frame" x="471" y="249" width="129" height="51"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="129" id="QD8-QH-bte"/>
                                                 <constraint firstAttribute="height" constant="50.5" id="Sqm-dc-8sf"/>
@@ -180,6 +180,34 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Friends List Table View Controller-->
+        <scene sceneID="BAj-Wd-Qvx">
+            <objects>
+                <tableViewController id="gvK-bG-hpx" customClass="FCFriendsListTableViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="am0-fK-8Dh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eiF-Hg-rhW">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eiF-Hg-rhW" id="XF0-K3-VbE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gvK-bG-hpx" id="QLU-Zd-dgv"/>
+                            <outlet property="delegate" destination="gvK-bG-hpx" id="kRd-9G-1q3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcW-cr-6zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1167"/>
+        </scene>
         <!--AV Player View Controller-->
         <scene sceneID="4rh-xG-c5q">
             <objects>
@@ -206,6 +234,40 @@
             </objects>
             <point key="canvasLocation" x="1439" y="377"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="YeZ-F0-RYU">
+            <objects>
+                <viewController storyboardIdentifier="Profile" id="bQk-uw-Kqf" customClass="FCProfileViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOw-lr-Oj9"/>
+                        <viewControllerLayoutGuide type="bottom" id="tva-JQ-t6E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vIp-tq-TPL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6j-Es-okj">
+                                <rect key="frame" x="264" y="203" width="73" height="30"/>
+                                <state key="normal" title="My friends"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-YF-YxT">
+                                <rect key="frame" x="240" y="273" width="121" height="30"/>
+                                <state key="normal" title="search for friends"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k6j-Es-okj" firstAttribute="top" secondItem="xOw-lr-Oj9" secondAttribute="bottom" constant="183" id="1My-rw-95G"/>
+                            <constraint firstItem="k6j-Es-okj" firstAttribute="centerX" secondItem="gfI-YF-YxT" secondAttribute="centerX" id="YMA-0I-v8e"/>
+                            <constraint firstItem="gfI-YF-YxT" firstAttribute="top" secondItem="k6j-Es-okj" secondAttribute="bottom" constant="40" id="d73-xX-1YM"/>
+                            <constraint firstItem="k6j-Es-okj" firstAttribute="centerX" secondItem="vIp-tq-TPL" secondAttribute="centerX" id="y3U-sL-Ifs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBt-sg-6CO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="1073"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="cJk-q9-LyG">
             <objects>
@@ -221,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jnV-No-4gM" id="zT3-Ou-cqB">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -229,7 +291,7 @@
                                         <rect key="frame" x="0.0" y="200" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CBL-tM-K5A" id="azL-KG-jhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kf1-cr-XSC">
@@ -252,7 +314,7 @@
                                         <rect key="frame" x="0.0" y="250" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvj-sk-d6J" id="csn-dU-0zv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOb-xu-J2S">
@@ -275,7 +337,7 @@
                                         <rect key="frame" x="0.0" y="300" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kNN-O9-rcr" id="8tG-Wz-7XM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSh-Nv-sOf">
@@ -300,7 +362,7 @@
                                         <rect key="frame" x="0.0" y="350" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3EO-Pn-2RE" id="7og-Z5-rTg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-aq-UDf">

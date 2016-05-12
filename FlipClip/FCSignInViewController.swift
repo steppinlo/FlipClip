@@ -30,9 +30,9 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
     let kSignInCreateAccount = 4
     
     override func viewDidLoad() {
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.translucent = true
+//        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+//        self.navigationController!.navigationBar.shadowImage = UIImage()
+//        self.navigationController!.navigationBar.translucent = true
         
         let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("dismissKeyboard"))
         gestureRecognizer.cancelsTouchesInView = false
@@ -106,7 +106,8 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func logout(sender: AnyObject) {
-        KCSUser.activeUser().logout()
+        print("WRONG BUTON!")
+//        KCSUser.activeUser().logout()
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

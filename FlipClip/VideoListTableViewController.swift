@@ -16,41 +16,73 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
     @IBOutlet weak var cellLabel: UILabel!
     var videoList = [FCVideoCollection]()
     var videoURL: NSURL!
+    var activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50))
+    var zeroView = UIView()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-//        dispatchAsyncGlobal { 
+        self.view.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.whiteColor()
+//        
+//        KCSUser.activeUser().logout()
+        
+        if let _ = KCSUser.activeUser(){
+            self.refreshControl = UIRefreshControl()
+            self.refreshControl?.beginRefreshing()
+            self.tableView.addSubview(refreshControl!)
+            self.fetchTableItems()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
+            print(self)
+            self.presentViewController(signIn, animated: true, completion: nil)
+        }
         
         
         
-            FCVideoCollectionController.fetchCollection(KCSUser.activeUser().username, success: { (collection) in
-                self.videoList = collection
-                
-                
-                //fetch the urls of the collection. refactor for later.
-                for collection in self.videoList {
-                    
-                    
-                    FCVideoCollectionController.fetchSetURLs(collection.videoSet!, success: { (videoURLS) in
-                        collection.videoURLS = videoURLS
-                        if collection == self.videoList.last { self.tableView.reloadData() }
-                        }, failure: { (error) in
-                            //figure out error.
-                    })
-                }
-                
-                self.tableView.reloadData()
-            }) { (error) in
-                //figure out something with this...
-            }
-//        }
         
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
-     }
+    }
+    
+    func onRefresh(sender: AnyObject) {
+        self.fetchTableItems()
+    }
+    
+    func fetchTableItems() {
+        print(KCSUser.activeUser().username)
+        FCVideoCollectionController.fetchCollection(KCSUser.activeUser().username, success: { (collection) in
+            self.videoList = collection
+            
+            
+            //fetch the urls of the collection. refactor for later.
+            for collection in self.videoList {
+                print(collection.videoSet)
+                FCVideoCollectionController.fetchSetURLs(collection.videoSet!, success: { (videoURLS) in
+                    collection.videoURLS = videoURLS
+//                    dispatchAsyncMain({
+                        collection.thumbnail = FCVideoController.generateThumbnail(collection.videoURLS!.first!)
+//                    })
+                    
+                    if collection == self.videoList.last {
+                        self.refreshControl?.performSelector(#selector(UIRefreshControl.endRefreshing), withObject: nil, afterDelay: 0.3)
+                        
+                        self.tableView.reloadData()
+                    }
+                    }, failure: { (error) in
+                        //figure out error.
+                })
+            }
+            
+            self.tableView.reloadData()
+        }) { (error) in
+            //figure out something with this...
+        }
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.videoList.count
@@ -81,7 +113,7 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
         let videoPlaylist = video.videoURLS!.map({ clip in AVPlayerItem(URL: clip)})
         print(videoPlaylist.count)
         destination.player = AVQueuePlayer(items: videoPlaylist)
-        //add to last item of array
+        //TO DO: add to last item of array
 //        destination.player?.actionAtItemEnd = .Pause
         
         destination.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -120,13 +152,15 @@ class FCVideoListTableViewCell: UITableViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var collabLabel: UILabel!
-    var videoCollection: FCVideoCollection!
-    var delegate: FCVideoListTableViewCellDelegate!
-    var videoURLS = [NSURL]() {
+    var videoCollection: FCVideoCollection! {
         didSet {
-            self.thumbnail = FCVideoController.generateThumbnail(self.videoURLS.first!)
+            if let _ = videoCollection.thumbnail {
+                self.thumbnail = videoCollection.thumbnail
+            }
         }
     }
+    var delegate: FCVideoListTableViewCellDelegate!
+    var videoURLS = [NSURL]()
     var thumbnail: UIImage? {
         didSet {
             self.thumbnailImageView.image = thumbnail
@@ -140,8 +174,6 @@ class FCVideoListTableViewCell: UITableViewCell {
 
 
     @IBAction func addButton(sender: AnyObject) {
-        print(self.videoCollection.videoSet)
-        print(self.videoCollection.authors)
         self.delegate?.addVideo(self.videoCollection)
     }
     

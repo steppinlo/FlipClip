@@ -18,9 +18,14 @@ class FCVideoController: NSObject {
 
     
     class func create(video: NSData, collection: FCVideoCollection?) {
+        
+        let metadata = KCSMetadata()
+        metadata.setGloballyReadable(true)
+        metadata.setGloballyWritable(true)
+        
         KCSFileStore.uploadData(
             video,
-            options: [KCSFileFileName: "video", KCSFileMimeType: "video/mp4", KCSFileACL: KCSMetadata()],
+            options: [KCSFileFileName: "video", KCSFileMimeType: "video/mp4", KCSFileACL: metadata, KCSFilePublic: true],
             completionBlock: { (uploadInfo: KCSFile!, error: NSError?) -> Void in
                 if let uploadInfo = uploadInfo {
                     NSLog("Upload finished. File id='%@'.", uploadInfo.fileId)

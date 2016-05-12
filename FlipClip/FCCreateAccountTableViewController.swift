@@ -77,6 +77,7 @@ class FCCreateAccountTableViewController: UIViewController, UITextFieldDelegate,
             password: self.password,
             fieldsAndValues: [
                 KCSUserAttributeEmail : self.email,
+                "friends": NSArray()
             ],
             withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
                 if errorOrNil == nil {
