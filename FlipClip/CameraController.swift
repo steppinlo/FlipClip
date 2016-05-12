@@ -14,7 +14,7 @@ import AVFoundation
 class CameraController: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     var video = FCVideo()
-    var videoCollection: [String]!
+    var videoCollection: FCVideoCollection?
     
     override func viewDidLoad() {
         self.delegate = self
@@ -29,6 +29,12 @@ class CameraController: UIImagePickerController, UIImagePickerControllerDelegate
         let scale = ceil((screenSize.height/imageWidth)*10)/10
         self.cameraViewTransform = CGAffineTransformMakeScale(scale, scale)
         
+        if let videoCollection = videoCollection {
+            print(videoCollection.videoSet)
+            print("********")
+            print(videoCollection.authors)
+        }
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -40,7 +46,7 @@ class CameraController: UIImagePickerController, UIImagePickerControllerDelegate
         //gets nsdata of the object and sends it to the controller
         let recordedVideo = info[UIImagePickerControllerMediaURL] as! NSURL
         let videoData = NSData(contentsOfURL: recordedVideo)
-        FCVideoController.create(videoData!, collection: nil)
+        FCVideoController.create(videoData!, collection: videoCollection)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

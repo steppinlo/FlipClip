@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class FCVideoCollectionController: NSObject {
     static let collectionStore: KCSStore = KCSLinkedAppdataStore.storeWithOptions([
@@ -35,8 +36,6 @@ class FCVideoCollectionController: NSObject {
         }
         
         collection?.videoURL = video
-        
-        
         
         collectionStore.saveObject(
             collection,
@@ -79,23 +78,35 @@ class FCVideoCollectionController: NSObject {
         )
     }
     
-    class func fetchSetURLs(set: [FCVideo]) -> [NSURL] {
+    class func fetchSetURLs(set: [String], success: ([NSURL])->Void, failure: (NSError)->Void) {
 //        gets streaming url to store as just getting remoteurl does not work for some reason in kcsfilestore.uploaddata...
         var videoURLS = [NSURL]()
-        for videos in set {
+        for videoId in set {
             KCSFileStore.getStreamingURL(
-                videos.videoId,
+                videoId,
                 completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
-                    if error != nil { return }
+                    if error != nil { failure(error) }
                     videoURLS.append(streamingResource.remoteURL)
+                    if videoId == set.last { success(videoURLS) }
                 }
             )
         }
-        return videoURLS
     }
     
-    
-    
+    class func unpackURLsAndGenerateThumbnail(video: FCVideoCollection, success: (videos: [NSURL])->Void, failure: (error: NSError)->Void) {
+        var videoURLS = [NSURL]()
+        for videoId in video.videoSet! {
+            KCSFileStore.getStreamingURL(
+                videoId,
+                completionBlock: { (streamingResource: KCSFile!, error: NSError!) -> Void in
+                    if error != nil { failure(error: error) }
+                    videoURLS.append(streamingResource.remoteURL)
+                    if videoId == video.videoSet!.last {
+                        success(videos: videoURLS) }
+                }
+            )
+        }
+    }
     
     
 }

@@ -24,6 +24,7 @@ class FCVideoController: NSObject {
             completionBlock: { (uploadInfo: KCSFile!, error: NSError?) -> Void in
                 if let uploadInfo = uploadInfo {
                     NSLog("Upload finished. File id='%@'.", uploadInfo.fileId)
+                    self.saveVideoObject(uploadInfo.fileId, collection: collection)
                 } else if let error = error {
                     print("there was an error! File id = '%@'.", error)
                 }
@@ -68,6 +69,16 @@ class FCVideoController: NSObject {
         }
     }
     
+    
+    
+    class func unpackURLs(video: FCVideoCollection, success: (videos: [NSURL])->Void, failure: (error: NSError)->Void) {
+        FCVideoCollectionController.fetchSetURLs(video.videoSet!, success: { (videos) in
+            success(videos: videos)
+            }, failure: { (error) in
+                //error report
+        })
+    }
+    
     class func generateThumbnail(url: NSURL) -> UIImage? {
         let asset = AVAsset(URL: url)
         let imageGenerator = AVAssetImageGenerator(asset: asset)
@@ -87,4 +98,5 @@ class FCVideoController: NSObject {
             return nil
         }
     }
+    
 }

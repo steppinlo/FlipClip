@@ -15,7 +15,7 @@ class FCVideoCollection: NSObject {
     var authors: [String]?
     var metadata: KCSMetadata?
     var videoURLS: [NSURL]?
-    var thumbnail = UIImage()
+    var thumbnail: UIImage!
     
     override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
         return [
@@ -44,13 +44,21 @@ class FCVideoCollection: NSObject {
     
     convenience init(data: FCVideoCollection) {
         self.init()
-        self.unload()
+//        dispatchAsyncMain { 
+            self.unload(data)
+//        }
+        
     }
     
-    private func unload() {
-        if let _ = self.videoSet {
-            self.videoURLS = FCVideoCollectionController.convertSetToNSURL(self.videoSet!)
-            self.thumbnail = FCVideoController.generateThumbnail(self.videoURLS!.first!)!
+    private func unload(video: FCVideoCollection) {
+        self.videoSet = video.videoSet
+        self.authors = video.authors
+        if let _ = video.videoSet {
+            FCVideoCollectionController.fetchSetURLs(video.videoSet!, success: { (videos) in
+                self.videoURLS = videos
+                }, failure: { (error) in
+                    //error report
+            })
         }
     }
     
