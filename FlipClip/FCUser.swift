@@ -8,10 +8,19 @@
 
 import Foundation
 
-class FCUser: NSObject {
-    var entityId: String?
-    var username: String?
-    var email: String?
-    var friends: String?
+class FCUser: KCSUser {
+    var friends: [String]!
+    
+    override init() {
+        super.init()
+    }
+    
+    convenience init(data: KCSUser) {
+        self.init()
+        self.userId = data.userId
+        self.username = data.username
+        self.email = data.email
+        self.friends = data.getValueForAttribute("friends") as! [String]
+    }
 }
 

@@ -15,7 +15,7 @@ class FCVideo: NSObject {
     var author: KCSUser?
     var collection: FCVideoCollection?
     var videoURL: NSURL?
-    var metadata: KCSMetadata?
+    var metadata: KCSMetadata!
     
     internal override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
         return [

@@ -72,6 +72,9 @@ class FCCreateAccountTableViewController: UIViewController, UITextFieldDelegate,
     }
     
     func createUser() {
+        let newUser = KCSUser()
+        let value = newUser.setValue(NSArray(), forAttribute: "friends")
+        
         KCSUser.userWithUsername(
             self.name,
             password: self.password,

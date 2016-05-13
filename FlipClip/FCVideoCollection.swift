@@ -13,7 +13,7 @@ class FCVideoCollection: NSObject {
     var videoSet: [String]?
     var videoURL: FCVideo?
     var authors: [String]?
-    var metadata: KCSMetadata?
+    var metadata: KCSMetadata!
     var videoURLS: [NSURL]?
     var thumbnail: UIImage!
     
@@ -54,6 +54,7 @@ class FCVideoCollection: NSObject {
         self.videoSet = video.videoSet
         self.authors = video.authors
         self.entityId = video.entityId
+        self.metadata = video.metadata
         if let _ = video.videoSet {
             FCVideoCollectionController.fetchSetURLs(video.videoSet!, success: { (videos) in
                 self.videoURLS = videos

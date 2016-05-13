@@ -22,10 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
         let nav = UINavigationController.init(rootViewController: signIn)
+        
 //        KCSUser.activeUser().logout()
 //        print(self.window?.rootViewController)
         if let _ = KCSUser.activeUser() {
-//            do nothing
+            currentUser = FCUser.init(data: KCSUser.activeUser())
         } else {
             self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
         }

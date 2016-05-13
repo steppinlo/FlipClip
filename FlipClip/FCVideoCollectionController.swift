@@ -24,14 +24,19 @@ class FCVideoCollectionController: NSObject {
             if let _ = collection.authors where !collection.authors!.contains(KCSUser.activeUser().username){
                     collection.authors!.append(KCSUser.activeUser().username)
             }
+            //todo: add this to when sending to a friend.
+            collection.metadata.setGloballyWritable(true)
+            collection.metadata.setGloballyReadable(true)
             
         } else {
-            collection = FCVideoCollection()
-            collection!.videoSet = [videoId]
-            collection?.authors = [KCSUser.activeUser().username]
+            let newCollection = FCVideoCollection()
+            newCollection.videoSet = [videoId]
+            newCollection.authors = [KCSUser.activeUser().username]
+            collection = newCollection
         }
         
         collection?.videoURL = video
+        
         
         collectionStore.saveObject(
             collection,
@@ -55,7 +60,6 @@ class FCVideoCollectionController: NSObject {
     class func fetchCollection(user: String, success: ([FCVideoCollection])-> Void, failiure: (error: NSError)-> Void) {
         
         let query = KCSQuery(onField: "authors", withExactMatchForValue: KCSUser.activeUser().username)
-//        let query = KCSQuery(onField: "authors", usingConditional: .KCSAll, forValue: KCSUser.activeUser().username)
         
         var queryResult = [FCVideoCollection]()
         
@@ -106,8 +110,7 @@ class FCVideoCollectionController: NSObject {
                     if error != nil { failure(error: error) }
                     videoURLS.append(streamingResource.remoteURL)
                     if videoId == set.first { videoThumb = FCVideoController.generateThumbnail(videoURLS.first!)! }
-                    if videoId == set.last {
-                        success(videos: videoURLS, image: videoThumb) }
+                    if videoId == set.last { success(videos: videoURLS, image: videoThumb) }
                 }
             )
         }

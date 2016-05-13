@@ -183,19 +183,34 @@
         <!--Friends List Table View Controller-->
         <scene sceneID="BAj-Wd-Qvx">
             <objects>
-                <tableViewController id="gvK-bG-hpx" customClass="FCFriendsListTableViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FriendsList" id="gvK-bG-hpx" customClass="FCFriendsListTableViewController" customModule="FlipClip" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="am0-fK-8Dh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eiF-Hg-rhW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="friendsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" id="eiF-Hg-rhW" customClass="FCFriendsListTableViewCell" customModule="FlipClip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eiF-Hg-rhW" id="XF0-K3-VbE">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-u3-ln1">
+                                            <rect key="frame" x="27" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5Dd-u3-ln1" firstAttribute="leading" secondItem="XF0-K3-VbE" secondAttribute="leadingMargin" constant="19" id="Eka-Ax-KrN"/>
+                                        <constraint firstItem="5Dd-u3-ln1" firstAttribute="centerY" secondItem="XF0-K3-VbE" secondAttribute="centerY" id="VVK-pg-MPK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendsLabel" destination="5Dd-u3-ln1" id="SDd-H7-TFo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -263,6 +278,9 @@
                             <constraint firstItem="k6j-Es-okj" firstAttribute="centerX" secondItem="vIp-tq-TPL" secondAttribute="centerX" id="y3U-sL-Ifs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="friendsButton" destination="k6j-Es-okj" id="o29-hX-E2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBt-sg-6CO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

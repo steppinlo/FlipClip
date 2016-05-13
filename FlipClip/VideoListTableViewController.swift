@@ -30,20 +30,16 @@ class VideoListTableViewController: UITableViewController, FCVideoListTableViewC
 //        
 //        KCSUser.activeUser().logout()
         
-        if let _ = KCSUser.activeUser(){
-            self.refreshControl = UIRefreshControl()
-            self.refreshControl?.beginRefreshing()
-            self.tableView.addSubview(refreshControl!)
-            self.fetchTableItems()
-        } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
-            print(self)
-            self.presentViewController(signIn, animated: true, completion: nil)
-        }
-        
-        
-        
+//        if let _ = KCSUser.activeUser(){
+//            self.refreshControl = UIRefreshControl()
+//            self.refreshControl?.beginRefreshing()
+//            self.tableView.addSubview(refreshControl!)
+//            self.fetchTableItems()
+//        } else {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let signIn = storyboard.instantiateViewControllerWithIdentifier("SignIn") as! FCSignInViewController
+//            self.presentViewController(signIn, animated: true, completion: nil)
+//        }
         
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
