@@ -16,7 +16,6 @@ class FCVideoCollection: NSObject {
     var metadata: KCSMetadata?
     var videoURLS: [NSURL]?
     var thumbnail: UIImage!
-    var videoObjects: [FCVideo]?
     
     override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
         return [
@@ -32,12 +31,11 @@ class FCVideoCollection: NSObject {
         return [
 //            "authors": KCSUserCollectionName,
             "videoURL": "Video",
-            "videoObjects": "Video"
         ]
     }
     
     static override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
-        return ["videoURL", "videoObjects"]
+        return ["videoURL"]
     }
     
     override init() {
@@ -55,7 +53,7 @@ class FCVideoCollection: NSObject {
     private func unload(video: FCVideoCollection) {
         self.videoSet = video.videoSet
         self.authors = video.authors
-        self.videoObjects = video.videoObjects
+        self.entityId = video.entityId
         if let _ = video.videoSet {
             FCVideoCollectionController.fetchSetURLs(video.videoSet!, success: { (videos) in
                 self.videoURLS = videos

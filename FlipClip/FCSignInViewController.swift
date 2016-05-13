@@ -34,7 +34,7 @@ class FCSignInViewController: UITableViewController, UITextFieldDelegate {
 //        self.navigationController!.navigationBar.shadowImage = UIImage()
 //        self.navigationController!.navigationBar.translucent = true
         
-        let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("dismissKeyboard"))
+        let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(FCSignInViewController.dismissKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(gestureRecognizer)
         UIScrollViewKeyboardDismissMode .OnDrag

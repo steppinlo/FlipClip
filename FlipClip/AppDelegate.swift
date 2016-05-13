@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController.init(rootViewController: signIn)
 //        KCSUser.activeUser().logout()
 //        print(self.window?.rootViewController)
-//        if let _ = KCSUser.activeUser() {
-     //       do nothing
-//        } else {
+        if let _ = KCSUser.activeUser() {
+//            do nothing
+        } else {
             self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
-//        }
+        }
     
         self.navigationBarAppearance()
         self.window?.makeKeyAndVisible()

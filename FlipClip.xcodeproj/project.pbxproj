@@ -218,6 +218,7 @@
 				02563B2C1C7BCFD5000DE196 /* CameraController.swift */,
 				02BAF5071CC0093A00AE35F1 /* VideoListTableViewController.swift */,
 				023C16421CE5180700F6BB71 /* FCFriendsListTableViewController.swift */,
+				023C16441CE51C5700F6BB71 /* FCProfileViewController.swift */,
 				02E170381C62EEAA00A6188F /* Main.storyboard */,
 				02E1703B1C62EEAA00A6188F /* Assets.xcassets */,
 				02E1703D1C62EEAA00A6188F /* LaunchScreen.storyboard */,
@@ -226,7 +227,6 @@
 				028B85831CC7FE8900A3F9F1 /* FlipClip-Bridging-Header.h */,
 				024EC9A41CC96A8500A21A2C /* FCCameraViewController.swift */,
 				024EC9A61CC990D200A21A2C /* AVCamPreviewView.swift */,
-				023C16441CE51C5700F6BB71 /* FCProfileViewController.swift */,
 			);
 			path = FlipClip;
 			sourceTree = "<group>";
